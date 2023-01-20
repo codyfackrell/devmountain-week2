@@ -86,7 +86,17 @@ for (i = 0; i < 10; i++) {
   Create a for-loop that runs 10 times, logging the numbers 1 through 10. Ex, on the first iteration it would log 1, on the second iteration it would log 2.
 */
 
-//CODE HERE
+let oneToTen = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+for (i = 0; i < 10; i++) {
+  console.log(oneToTen[i])
+}
+
+for (i = 0; i < 10; i++) {
+  console.log(i + 1)
+}
+
+// ** I added two ways to get the same result. The first way was using an array while the second one was loggin 'i + 1'
 
 ////////// PROBLEM 7 //////////
 
