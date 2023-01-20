@@ -41,5 +41,3 @@ for (i = 0; i < bigOrSmallArray.length;  i++) {
     answers.push("small")
   }
 }
-
-console.log(answers)
