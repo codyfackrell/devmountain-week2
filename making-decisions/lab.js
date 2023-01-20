@@ -96,7 +96,7 @@ for (i = 0; i < 10; i++) {
   console.log(i + 1)
 }
 
-// ** I added two ways to get the same result. The first way was using an array while the second one was loggin 'i + 1'
+// ** I added two ways to get the same result. The first way was using an array (for practice) while the second one was loggin 'i + 1'
 
 ////////// PROBLEM 7 //////////
 
@@ -104,8 +104,9 @@ for (i = 0; i < 10; i++) {
   Create a for-loop that logs the numbers 0 through 10 backwards. Ex, on the first iteration it would log 10, on the second iteration it would log 9.
 */
 
-//CODE HERE
-
+for (i = 11; i > 0; i--) {
+  console.log(i - 1)
+}
 
 ////////// PROBLEM 8 //////////
 
