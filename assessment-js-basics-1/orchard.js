@@ -49,9 +49,17 @@ const pinkPrice = .55
     Log `totalAcres` to the console.
 */
 
-// CODE HERE
+let totalAcres = 0;
 
+for (i = 0; i < 7; i++) {
+    totalAcres += fujiAcres[i];
+    totalAcres += galaAcres[i];
+    totalAcres += pinkAcres[i];
+}
 
+console.log(totalAcres)
+
+// I initally had 'fujiAcres.length' as the condition arguement in the for loop. While that would have worked, because each array were 7 indexs long, it could have been confusing for other developers reading the code. 
 
 
 
@@ -67,10 +75,11 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
-// CODE HERE
+const averageDailyAcres = (totalAcres / (fujiAcres.length + galaAcres.length + pinkAcres.length))
 
+console.log(averageDailyAcres)
 
-
+// While I knew that there were 21 values in the three arrays, I figured it wouldn't always be practical to know the exact number. I wanted to figure out an alternative way to find the average. I decided to sum to total of length of each array to be the divisor.
 
 
 // PROBLEM 3
@@ -105,8 +114,12 @@ const pinkPrice = .55
 let acresLeft = 174 
 let days = 0
 
-// CODE HERE
+while (acresLeft > 0) {
+    acresLeft -= averageDailyAcres
+    days += 1;   
+}
 
+console.log(days)
 
 
 // PROBLEM 4
@@ -135,13 +148,19 @@ let days = 0
 
 // CODE HERE
 
-// let fujiTons =
-// let galaTons =
-// let pinkTons =
+let fujiTons = fujiAcres.slice(0, 7)
+let galaTons = galaAcres.slice(0, 7)
+let pinkTons = pinkAcres.slice(0, 7)
 
+for (i = 0; i < 7; i++) {
+    fujiTons[i] *= 6.5;
+    galaTons[i] *= 6.5;
+    pinkTons[i] *= 6.5;
+}
 
-
-
+console.log(fujiTons)
+console.log(galaTons)
+console.log(pinkTons)
 
 
 // PROBLEM 5
@@ -160,14 +179,25 @@ let days = 0
     Hint: there are 2000 pounds in a ton.
 */
 
-// CODE HERE 
+let fujiPounds = 0
+let galaPounds = 0
+let pinkPounds = 0
 
-// let fujiPounds =
-// let galaPounds =
-// let pinkPounds =
+for (i = 0; i < 7; i++) {
+    fujiPounds += fujiTons[i];
+    galaPounds += galaTons[i];
+    pinkPounds += pinkTons[i];
+}
 
+fujiPounds *= 2000;
+galaPounds *= 2000;
+pinkPounds *= 2000;
 
+console.log(fujiPounds)
+console.log(galaPounds)
+console.log(pinkPounds)
 
+// I started by inititalizing each variable as 0 to later store the total pounds for each variety in. I created a for loop to sum the total tons for each variety. I initially included the "varietyAcres *= 2000" in the for loop and was getting a massive number logged. I realized it was looping each 7 times, producing a big number. I took those out of the for loop and logged the correct number of pounds. 
 
 
 
@@ -189,12 +219,15 @@ let days = 0
 
 // CODE HERE
 
-// let fujiProfit =
-// let galaProfit =
-// let pinkProfit =
+let fujiProfit = (fujiPounds *= fujiPrice)
+let galaProfit = (galaPounds *= galaPrice )
+let pinkProfit = (pinkPounds *= pinkPrice)
 
+console.log(fujiProfit)
+console.log(galaProfit)
+console.log(pinkProfit)
 
-
+// I initially had the varietyProfit variables initalizied to 0 then below the variables, I had the equation to calculate total pounds. I realized the current method would be easier and less lines of code. After the switch, it wasn't working. I relized I forgot the = rather than *=. I have done this multiple times and it took a minute to relaize. 
 
 
 
@@ -208,4 +241,8 @@ let days = 0
     Log `totalProfit` to the console.
 */
 
-// CODE HERE
+var totalProfit = (fujiProfit + galaProfit + pinkProfit)
+
+console.log(totalProfit)
+
+// total profit for the week was $547,170. Thats $28.45MM/yr. Seems like a great profit to me!
